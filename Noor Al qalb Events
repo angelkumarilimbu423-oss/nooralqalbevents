@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Noor Alqalb Events</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5f2ed;
+  color:#333;
+}
+
+header {
+  background:#c8a96a;
+  padding:50px 20px;
+  text-align:center;
+  color:white;
+}
+
+header h1 {
+  font-size:42px;
+  margin:0;
+}
+
+header p {
+  font-size:18px;
+}
+
+.section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.services, .gallery {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card {
+  background:white;
+  width:250px;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color:#c8a96a;
+}
+
+.gallery img {
+  width:250px;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.calculator {
+  max-width:400px;
+  margin:auto;
+  text-align:left;
+}
+
+input, select {
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+button {
+  background:#c8a96a;
+  color:white;
+  padding:15px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+  width:100%;
+}
+
+.whatsapp {
+  background:#25D366;
+  margin-top:10px;
+}
+
+footer {
+  background:#333;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+
+<script>
+function calculatePrice() {
+  var staffType = document.getElementById("staffType").value;
+  var quantity = document.getElementById("quantity").value;
+  var hours = document.getElementById("hours").value;
+
+  var rate = 0;
+
+  if (staffType == "Hostess") rate = 150;
+  if (staffType == "Waiter") rate = 120;
+  if (staffType == "Security") rate = 180;
+  if (staffType == "Exhibition") rate = 200;
+
+  var total = rate * quantity * hours;
+
+  document.getElementById("totalPrice").innerHTML = "Estimated Price: AED " + total;
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Noor Alqalb Events</h1>
+  <p>Professional Event Staffing Solutions</p>
+</header>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Event Hostesses</h3>
+      <p>Professional staff for exhibitions & corporate events.</p>
+    </div>
+    <div class="card">
+      <h3>Waiters</h3>
+      <p>Experienced catering staff for weddings & parties.</p>
+    </div>
+    <div class="card">
+      <h3>Security</h3>
+      <p>Reliable trained security personnel.</p>
+    </div>
+    <div class="card">
+      <h3>Exhibition Staff</h3>
+      <p>Skilled staff for trade shows like GITEX.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Staff Gallery</h2>
+  <div class="gallery">
+    <img src="staff1.jpg">
+    <img src="staff2.jpg">
+    <img src="staff3.jpg">
+    <img src="staff4.jpg">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Auto Price Calculator</h2>
+  <div class="calculator">
+    <select id="staffType">
+      <option value="">Select Staff Type</option>
+      <option>Hostess</option>
+      <option>Waiter</option>
+      <option>Security</option>
+      <option>Exhibition</option>
+    </select>
+
+    <input type="number" id="quantity" placeholder="Number of Staff">
+    <input type="number" id="hours" placeholder="Number of Hours">
+
+    <button onclick="calculatePrice()">Calculate</button>
+
+    <h3 id="totalPrice"></h3>
+
+    <a href="https://wa.me/971XXXXXXXXX">
+      <button class="whatsapp">Book via WhatsApp</button>
+    </a>
+  </div>
+</section>
+
+<footer>
+© 2026 Noor Alqalb Events | All Rights Reserved
+</footer>
+
+</body>
+</html>
